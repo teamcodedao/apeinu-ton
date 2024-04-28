@@ -8,12 +8,17 @@ import Social from './social';
 import bird1Img from './bird-1.png';
 import cloud1Img from './cloud-1.png';
 import cloud2Img from './cloud-2.png';
+import cloud3Img from './cloud-3.png';
 import monkey1Img from './monkey-1.svg';
+import monkey2Img from './monkey-2.png';
 
 export default function Home() {
   return (
     <div className='min-h-screen'>
-      <div className='mx-auto max-w-screen-desktop px-5 lg:px-10 desktop:px-16'>
+      <div
+        id='home'
+        className='mx-auto max-w-screen-desktop px-5 lg:px-10 desktop:px-16'
+      >
         <header
           className={clsx(
             'flex items-center justify-between gap-x-10 py-5 lg:py-10',
@@ -55,7 +60,7 @@ export default function Home() {
 
       <div
         className={clsx(
-          'mx-auto mt-10 max-w-screen-desktop px-5 sm:mt-0 lg:mt-5 lg:px-10 desktop:px-16',
+          'relative z-10 mx-auto mt-10 max-w-screen-desktop px-5 sm:mt-0 lg:mt-5 lg:px-10 desktop:px-16',
           'flex justify-between gap-x-5 sm:gap-x-10 lg:gap-x-20'
         )}
       >
@@ -85,6 +90,42 @@ export default function Home() {
             target='_telegram'
           />
         </div>
+      </div>
+
+      <div
+        className={clsx(
+          'relative z-0 mx-auto mt-28 max-w-screen-desktop px-5 lg:mt-28 lg:px-10 xl:mt-12 desktop:px-16',
+          'flex gap-x-10 xl:gap-x-36'
+        )}
+      >
+        <div
+          className={clsx(
+            'shrink-0 self-center text-balance text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-[32px]',
+            'max-[550px]:multi-["absolute;inset-0;z-10;size-full;px-5;flex;flex-col;items-end;text-2xl"]'
+          )}
+        >
+          <p>GET YOURSELF READY!</p>
+          <p>THE Apeinu MEME COIN IS HERE!</p>
+        </div>
+        <div className='relative'>
+          <Image
+            src={cloud3Img}
+            alt=''
+            className='absolute -top-10 left-0 w-[274px] max-w-[50%] lg:-left-10 lg:-top-20 xl:w-[345px]'
+          />
+          <Image
+            src={monkey2Img}
+            quality={100}
+            priority
+            alt=''
+            className='-scale-x-100'
+          />
+        </div>
+        <Image
+          src={bird1Img}
+          alt=''
+          className='absolute -top-32 right-16 w-[105px] lg:-top-48'
+        />
       </div>
     </div>
   );
