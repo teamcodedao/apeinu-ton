@@ -15,10 +15,9 @@ export default function Nav({className, isHamburger}: NavProps) {
 
   return (
     <menu
-      className={clsx(className, `[&_a]:multi-['transition']`, {
+      className={clsx(className, `[&_a]:multi-['block;transition']`, {
         [clsx(
-          'space-y-3',
-          `[&_a]:multi-['text-3xl;[&:hover]:text-secondary']`,
+          `[&_a]:multi-['text-3xl;[&:hover]:text-secondary;py-2']`,
           '[&_a[aria-current=true]]:text-secondary'
         )]: isHamburger,
         [clsx(
