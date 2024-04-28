@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import clsx from 'clsx';
+import Marquee from 'react-fast-marquee';
 
 import Nav from './nav';
 import Hamburger from './hamburger';
@@ -155,14 +156,14 @@ export default function Home() {
             />
             <article
               className={clsx(
-                'relative w-[440px] max-w-full bg-secondary px-7 py-6 lg:w-[522px] lg:px-9 lg:py-8',
+                'relative w-full max-w-full bg-secondary px-7 py-6 sm:w-[440px] lg:w-[522px] lg:px-9 lg:py-8',
                 "after:multi-['absolute;inset-0;z-[-1];bg-black;rotate-[-3.08deg]']"
               )}
             >
               <h2 className='my-3 text-center font-boldie-slab text-7xl font-bold text-primary lg:text-8xl'>
                 About
               </h2>
-              <div className='text-balance font-baloo text-sm font-bold text-black max-[550px]:multi-["max-h-[300px];overflow-y-auto"] lg:text-[15px]'>
+              <div className='text-balance font-baloo text-sm font-bold text-black max-[845px]:multi-["max-h-[270px];overflow-y-auto"] lg:text-[15px]'>
                 Alright, so what&apos;s the deal with APEINU, you ask? Well,
                 we’re tired of coins coming and saying they are the Greatest
                 Memes. Let’s make it simple for you degens to understand. Why
@@ -193,6 +194,14 @@ export default function Home() {
             </article>
           </div>
         </div>
+      </div>
+
+      <div className='mt-52 bg-secondary py-5 min-[375px]:mt-40 min-[400px]:mt-36 min-[435px]:mt-32 min-[520px]:mt-16 min-[610px]:mt-[-3.7%] sm:py-7 md:py-10 lg:py-16'>
+        <Marquee autoFill>
+          <span className='inline-block px-10 font-boldie-slab text-4xl font-bold text-primary sm:text-5xl md:text-6xl lg:text-[64px]'>
+            $Apeinu
+          </span>
+        </Marquee>
       </div>
     </div>
   );
