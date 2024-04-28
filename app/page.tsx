@@ -11,14 +11,12 @@ import cloud2Img from './cloud-2.png';
 import cloud3Img from './cloud-3.png';
 import monkey1Img from './monkey-1.svg';
 import monkey2Img from './monkey-2.png';
+import aboutBgImg from './about-bg.svg';
 
 export default function Home() {
   return (
     <div className='min-h-screen'>
-      <div
-        id='home'
-        className='mx-auto max-w-screen-desktop px-5 lg:px-10 desktop:px-16'
-      >
+      <div className='mx-auto max-w-screen-desktop px-5 lg:px-10 desktop:px-16'>
         <header
           className={clsx(
             'flex items-center justify-between gap-x-10 py-5 lg:py-10',
@@ -42,7 +40,10 @@ export default function Home() {
         </header>
       </div>
 
-      <div className='mx-auto mt-3 max-w-screen-desktop px-5 md:mt-5 lg:mt-5 lg:px-10 desktop:px-16'>
+      <div
+        id='home'
+        className='mx-auto mt-3 max-w-screen-desktop px-5 md:mt-5 lg:mt-5 lg:px-10 desktop:px-16'
+      >
         <div className='flex items-center justify-between gap-x-10'>
           <Image
             src={bird1Img}
@@ -126,6 +127,72 @@ export default function Home() {
           alt=''
           className='absolute -top-32 right-16 w-[105px] lg:-top-48'
         />
+      </div>
+
+      <div id='about' className='relative mt-20 [--redundancy:20%] lg:mt-0'>
+        <Image
+          src={aboutBgImg}
+          priority
+          alt=''
+          className='mt-[calc(var(--redundancy)*-1)] w-full object-cover'
+        />
+        <Image
+          src={bird1Img}
+          alt=''
+          className='absolute right-1/3 top-1/3 w-[105px] -translate-x-1/2 -translate-y-1/2 -scale-x-100'
+        />
+        <div className='absolute left-0 top-0 w-full overflow-hidden'>
+          <div
+            className={clsx(
+              'mt-[var(--redundancy)]',
+              'mx-auto max-w-screen-desktop px-5 lg:px-10 desktop:px-16'
+            )}
+          >
+            <Image
+              src={cloud3Img}
+              alt=''
+              className='absolute -right-32 top-[calc(var(--redundancy)+80px)] hidden w-[250px] xl:block'
+            />
+            <article
+              className={clsx(
+                'relative w-[440px] max-w-full bg-secondary px-7 py-6 lg:w-[522px] lg:px-9 lg:py-8',
+                "after:multi-['absolute;inset-0;z-[-1];bg-black;rotate-[-3.08deg]']"
+              )}
+            >
+              <h2 className='my-3 text-center font-boldie-slab text-7xl font-bold text-primary lg:text-8xl'>
+                About
+              </h2>
+              <div className='text-balance font-baloo text-sm font-bold text-black max-[550px]:multi-["max-h-[300px];overflow-y-auto"] lg:text-[15px]'>
+                Alright, so what&apos;s the deal with APEINU, you ask? Well,
+                we’re tired of coins coming and saying they are the Greatest
+                Memes. Let’s make it simple for you degens to understand. Why
+                $APEINU? Because it stands for Greatest Of All Time. We’re not
+                shy about it; we know we’re the best and now you should know it
+                too.  Think of Sonic the APEINU as your trusty companion while
+                you navigate the world of Web3. Whether you&apos;re a seasoned
+                trader or a curious noob, we&apos;ve got something special for
+                you. We’re ready to go SUPER SONIC after the highly anticipated
+                APE upgrade.​ So, if you&apos;re ready to join the herd and be
+                part of something truly epic, saddle up, and let&apos;s make
+                history together! With $APEINU, you’re not just investing in a
+                token; you’re investing in the future, in greatness, in the
+                undeniable force of being the absolute best. To become the GOAT
+                you need to get some $APEINU! And remember… with $APEINU, the
+                sky&apos;s not the limit - it&apos;s just the beginning!
+              </div>
+              <Image
+                src={cloud1Img}
+                alt=''
+                className='absolute -left-32 -top-24 z-[-1] w-[200px] lg:-left-48 lg:w-[274px]'
+              />
+              <Image
+                src={cloud1Img}
+                alt=''
+                className='absolute -right-24 -top-16 w-[200px] max-[665px]:hidden lg:-right-48 lg:w-[274px]'
+              />
+            </article>
+          </div>
+        </div>
       </div>
     </div>
   );

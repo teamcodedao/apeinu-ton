@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         'boldie-slab': ['var(--font-boldie-slab)'],
+        baloo: ['var(--font-baloo)'],
       },
       screens: {
         desktop: '1440px',
