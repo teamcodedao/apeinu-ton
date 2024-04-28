@@ -3,10 +3,12 @@ import clsx from 'clsx';
 
 import Nav from './nav';
 import Hamburger from './hamburger';
+import Social from './social';
 
 import bird1Img from './bird-1.png';
 import cloud1Img from './cloud-1.png';
 import cloud2Img from './cloud-2.png';
+import monkey1Img from './monkey-1.svg';
 
 export default function Home() {
   return (
@@ -35,7 +37,7 @@ export default function Home() {
         </header>
       </div>
 
-      <div className='mx-auto mt-0 max-w-screen-desktop px-5 lg:mt-5 lg:px-10 desktop:px-16'>
+      <div className='mx-auto mt-3 max-w-screen-desktop px-5 md:mt-5 lg:mt-5 lg:px-10 desktop:px-16'>
         <div className='flex items-center justify-between gap-x-10'>
           <Image
             src={bird1Img}
@@ -48,6 +50,40 @@ export default function Home() {
           <div>
             <Image src={cloud2Img} alt='' className='md:w-[279px]' />
           </div>
+        </div>
+      </div>
+
+      <div
+        className={clsx(
+          'mx-auto mt-10 max-w-screen-desktop px-5 sm:mt-0 lg:mt-5 lg:px-10 desktop:px-16',
+          'flex justify-between gap-x-5 sm:gap-x-10 lg:gap-x-20'
+        )}
+      >
+        <div className='flex-[1_0_200px] max-[720px]:hidden'>
+          <Image src={monkey1Img} quality={100} priority alt='' />
+        </div>
+        <hgroup className='space-y-5 overflow-hidden text-center sm:space-y-10 sm:pt-10 lg:space-y-14 lg:pt-14'>
+          <h1 className='whitespace-nowrap font-boldie-slab text-6xl font-medium text-secondary sm:text-7xl md:text-8xl lg:text-9xl'>
+            Apeinu
+          </h1>
+          <div className='text-2xl font-bold lg:text-[30px]'>
+            <p className='uppercase'>Contract Address:</p>
+            <p className='break-words'>
+              {process.env.NEXT_PUBLIC_COIN_ADDRESS}
+            </p>
+          </div>
+        </hgroup>
+        <div className='shrink-0 space-y-10'>
+          <Social
+            image='/twitter.svg'
+            href={process.env.NEXT_PUBLIC_TWITTER_URL}
+            target='_twitter'
+          />
+          <Social
+            image='/telegram.svg'
+            href={process.env.NEXT_PUBLIC_TELEGRAM_URL}
+            target='_telegram'
+          />
         </div>
       </div>
     </div>

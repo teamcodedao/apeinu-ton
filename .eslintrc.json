@@ -4,5 +4,8 @@
     "tailwindcss": {
       "whitelist": ["mixin/menu", "mixin/hamburger"]
     }
+  },
+  "rules": {
+    "@next/next/no-img-element": "off"
   }
 }

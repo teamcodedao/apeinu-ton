@@ -13,6 +13,9 @@ const config: Config = {
         primary: '#034FE9',
         secondary: '#FF9D32',
       },
+      fontFamily: {
+        'boldie-slab': ['var(--font-boldie-slab)'],
+      },
       screens: {
         desktop: '1440px',
       },
