@@ -4,6 +4,10 @@ import clsx from 'clsx';
 import Nav from './nav';
 import Hamburger from './hamburger';
 
+import bird1Img from './bird-1.png';
+import cloud1Img from './cloud-1.png';
+import cloud2Img from './cloud-2.png';
+
 export default function Home() {
   return (
     <div className='min-h-screen'>
@@ -15,7 +19,7 @@ export default function Home() {
           )}
         >
           <Nav className='mixin/menu' />
-          <div className='mixin/hamburger -translate-y-2 self-baseline'>
+          <div className='mixin/hamburger -translate-x-1 -translate-y-2 self-baseline'>
             <Hamburger />
           </div>
           <a
@@ -29,6 +33,22 @@ export default function Home() {
             Buy $Apeinu
           </a>
         </header>
+      </div>
+
+      <div className='mx-auto mt-0 max-w-screen-desktop px-5 lg:mt-5 lg:px-10 desktop:px-16'>
+        <div className='flex items-center justify-between gap-x-10'>
+          <Image
+            src={bird1Img}
+            alt=''
+            className='-ml-10 w-[128px] shrink-0 -scale-x-100 lg:-ml-28'
+          />
+          <div className='max-md:invisible max-sm:w-[150px]'>
+            <Image src={cloud1Img} alt='' className='md:w-[274px]' />
+          </div>
+          <div>
+            <Image src={cloud2Img} alt='' className='md:w-[279px]' />
+          </div>
+        </div>
       </div>
     </div>
   );
