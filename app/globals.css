@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  @apply bg-primary text-white;
 }
 
 @layer utilities {

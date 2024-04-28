@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
@@ -7,8 +8,26 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#034FE9',
+        secondary: '#FF9D32',
+      },
+      screens: {
+        desktop: '1440px',
+      },
+    },
   },
-  plugins: [require('tailwindcss-multi')],
+  plugins: [
+    require('tailwindcss-mixins'),
+    require('tailwindcss-multi'),
+    plugin(function ({addUtilities}) {
+      addUtilities({
+        '.btn-shadow': {
+          boxShadow: '4px 4px 0 -2px black',
+        },
+      });
+    }),
+  ],
 };
 export default config;
