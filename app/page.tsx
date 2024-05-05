@@ -67,7 +67,7 @@ export default function Home() {
 
       <div
         className={clsx(
-          'relative z-10 mx-auto mt-10 max-w-screen-desktop px-5 sm:mt-0 lg:mt-5 lg:px-10 desktop:px-16',
+          'relative z-10 mx-auto mt-10 max-w-screen-desktop px-5 max-[390px]:pr-0 sm:mt-0 lg:mt-5 lg:px-10 desktop:px-16',
           'flex justify-between gap-x-5 sm:gap-x-10 lg:gap-x-20'
         )}
       >
@@ -108,7 +108,8 @@ export default function Home() {
         <div
           className={clsx(
             'shrink-0 self-center text-balance text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-[32px]',
-            'max-[550px]:multi-["absolute;inset-0;z-10;size-full;px-5;flex;flex-col;items-end;text-2xl"]'
+            'max-[550px]:multi-["absolute;inset-0;z-10;size-full;px-5;flex;flex-col;items-end;text-2xl;pt-12"]',
+            'space-y-3'
           )}
         >
           <p>GET YOURSELF READY!</p>
@@ -202,12 +203,61 @@ export default function Home() {
       </div>
 
       <div className='mt-52 bg-secondary py-5 min-[375px]:mt-40 min-[400px]:mt-36 min-[435px]:mt-32 min-[520px]:mt-16 min-[610px]:mt-[-3.7%] sm:py-7 md:py-10 lg:py-16'>
-        <Marquee autoFill>
+        <Marquee autoFill className='overflow-y-hidden'>
           <span className='inline-block px-10 font-boldie-slab text-4xl font-bold text-primary sm:text-5xl md:text-6xl lg:text-[64px]'>
             $Apeinu
           </span>
         </Marquee>
       </div>
+
+      <footer
+        id='tokenomics'
+        className='relative overflow-hidden px-5 py-20 text-center'
+      >
+        <Image
+          src={cloud1Img}
+          alt=''
+          className='absolute -left-24 top-1/3 z-[-1] w-[274px] -translate-y-1/2 max-md:hidden'
+        />
+        <Image
+          src={cloud3Img}
+          alt=''
+          className='absolute -right-14 top-1/3 z-[-1] w-[274px] max-w-[50%] -translate-y-1/2 max-md:hidden xl:w-[345px]'
+        />
+        <Image
+          src={cloud3Img}
+          alt=''
+          className='absolute -bottom-20 left-10 z-[-1] w-[274px] max-w-[50%] xl:w-[345px]'
+        />
+        <Image
+          src={cloud1Img}
+          alt=''
+          className='absolute -bottom-10 -right-24 z-[-1] w-[274px]'
+        />
+        <h2 className='text-center font-boldie-slab text-5xl font-medium text-secondary sm:text-6xl md:text-7xl lg:text-8xl'>
+          Tokenomics
+        </h2>
+        <h4 className='my-10 text-4xl font-bold sm:text-5xl'>
+          Supply: 400.000.000
+        </h4>
+        <div className='space-y-2 text-2xl font-bold sm:text-3xl md:text-[32px]'>
+          <p>No presale | No farming | No secret algo</p>
+          <p>No claim process | No paid marketing</p>
+          <p>No team allocation | No favoritism to whales</p>
+        </div>
+        <div className='mt-10'>
+          <a
+            href={process.env.NEXT_PUBLIC_COIN_URL}
+            target='_buy'
+            className={clsx(
+              'inline-block rounded-full border-[3px] border-black bg-primary px-6 py-3 text-3xl font-bold text-secondary transition btn-shadow sm:text-[40px] md:px-8 md:py-4',
+              `hover:multi-['text-primary;bg-secondary']`
+            )}
+          >
+            Buy $Apeinu
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }

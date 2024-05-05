@@ -25,11 +25,7 @@ export default function Nav({className, isHamburger}: NavProps) {
           'gap-x-5 lg:gap-x-10',
           'text-2xl',
           `[&_a]:multi-['inline-block;bg-secondary;rounded-full;border-[3px];border-black;font-bold;px-6;py-1.5;btn-shadow']`,
-          `hover:[&_a:hover]:multi-['text-secondary;bg-primary']`,
-          {
-            "[&_a[aria-current=true]]:multi-['text-secondary;bg-primary']":
-              isMounted,
-          }
+          `hover:[&_a:hover]:multi-['text-secondary;bg-primary']`
         )]: !isHamburger,
       })}
     >
